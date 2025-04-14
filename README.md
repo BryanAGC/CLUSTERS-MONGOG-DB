@@ -66,3 +66,10 @@ Una vez que hayas configurado el archivo `docker-compose.yml` en ambas PCs, ejec
 ```bash
 docker-compose up -d
 ```
+### 4️⃣ Iniciar el Replica Set desde PC1
+
+En **PC1**, ingresa al contenedor de MongoDB ejecutando el siguiente comando:
+
+```bash
+docker exec -it chatdb2 mongosh --username admin --password password --authenticationDatabase admin
+```
