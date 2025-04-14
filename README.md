@@ -86,3 +86,10 @@ rs.initiate({
   ]
 });
 ```
+### 6️⃣ Verificar conectividad entre nodos
+
+Desde **PC1**, ejecuta el siguiente comando en la terminal para verificar que puedes conectarte al puerto del contenedor de MongoDB en **PC2**:
+
+```bash
+telnet 192.168.138.207 27019
+```
