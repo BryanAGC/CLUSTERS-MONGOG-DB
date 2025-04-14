@@ -59,3 +59,10 @@ services:
       - ./mongodb-keyfile:/data/configdb/mongodb-keyfile
     command: ["mongod", "--replSet", "rs0", "--keyFile", "/data/configdb/mongodb-keyfile"]
 ```
+### 3️⃣ Levantar los contenedores de MongoDB
+
+Una vez que hayas configurado el archivo `docker-compose.yml` en ambas PCs, ejecuta el siguiente comando en **ambas máquinas** para levantar los contenedores:
+
+```bash
+docker-compose up -d
+```
