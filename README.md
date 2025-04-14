@@ -73,3 +73,16 @@ En **PC1**, ingresa al contenedor de MongoDB ejecutando el siguiente comando:
 ```bash
 docker exec -it chatdb2 mongosh --username admin --password password --authenticationDatabase admin
 ```
+### 5️⃣ Inicializar el Replica Set
+
+Una vez dentro del shell de MongoDB en **PC1**, ejecuta el siguiente comando para iniciar el Replica Set y agregar ambos nodos:
+
+```js
+rs.initiate({
+  _id: "rs0",
+  members: [
+    { _id: 0, host: "192.168.138.38:27019" },  // IP de PC1
+    { _id: 1, host: "192.168.138.207:27019" }  // IP de PC2
+  ]
+});
+```
