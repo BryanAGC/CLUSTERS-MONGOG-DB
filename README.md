@@ -29,3 +29,33 @@ chmod 400 mongodb-keyfile
 ```bash
 chmod 400 mongodb-keyfile
 ```
+### 🧩 2. Configurar el `docker-compose.yml` en PC1 y PC2
+
+En ambas computadoras, debes agregar la configuración del **Replica Set** y el archivo **keyFile** en el archivo `docker-compose.yml`.
+
+#### 📦 En **PC1**:
+
+```yaml
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo1
+    ports:
+      - "27019:27017"
+    volumes:
+      - ./mongodb-keyfile:/data/configdb/mongodb-keyfile
+    command: ["mongod", "--replSet", "rs0", "--keyFile", "/data/configdb/mongodb-keyfile"]
+```
+#### 📦 En **PC2**:
+
+```yaml
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo2
+    ports:
+      - "27019:27017"
+    volumes:
+      - ./mongodb-keyfile:/data/configdb/mongodb-keyfile
+    command: ["mongod", "--replSet", "rs0", "--keyFile", "/data/configdb/mongodb-keyfile"]
+```
