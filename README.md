@@ -71,7 +71,7 @@ docker-compose up -d
 En **PC1**, ingresa al contenedor de MongoDB ejecutando el siguiente comando:
 
 ```bash
-docker exec -it chatdb2 mongosh --username admin --password password --authenticationDatabase admin
+sudo docker exec -it chatdb2 mongosh --username admin --password password --authenticationDatabase admin
 ```
 ### 5️⃣ Inicializar el Replica Set
 
