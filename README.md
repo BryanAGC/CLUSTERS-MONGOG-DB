@@ -92,4 +92,5 @@ Desde **PC1**, ejecuta el siguiente comando en la terminal para verificar que pu
 
 ```bash
 telnet 192.168.138.207 27019
+rs.status
 ```
